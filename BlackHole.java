@@ -23,8 +23,9 @@ public class BlackHole extends Body {
     public BlackHole(double[] arr, double R) {
         super(arr, R);
         newImage("blackhole.gif");
+        newSize(0.5);
         reinit();
-        newSize(getSize() / 2);
+        
     }
 
     // use body force update and then attempt to eat neighbors

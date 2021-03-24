@@ -14,7 +14,7 @@ public class Neutron extends Body {
     public Neutron(double[] arr, double R) {
         super(arr, R);
         newImage("neutron.gif");
-        newSize(getSize() / 2);
+        newSize(0.5);
         reinit();
     }
 

@@ -24,9 +24,7 @@ public class Star extends Body {
     // start the supernova process randomly
     public void Nova() {
         if (Math.random() > 0.99995) {
-            novaCount++;
             startNova = true;
-            newSize(getSize() * NOVA_RATE);
         }
     }
 
@@ -41,7 +39,7 @@ public class Star extends Body {
                 else newImage("neutron.gif");
             }
             else {
-                newSize(getSize() * NOVA_RATE);
+                newSize(NOVA_RATE);
                 novaCount++;
             }
         }

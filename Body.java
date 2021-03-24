@@ -10,6 +10,8 @@
 import java.util.Scanner;
 
 public class Body {
+    public final double SCALE = 0.042;  // scalar for star size
+
     private double rx;      // x position
     private double ry;      // y position
     private double vx;      // x velocity
@@ -18,14 +20,12 @@ public class Body {
     private double mass;    // mass
     private String image;   // png image
     private double size;    // size
-
-    public final double SCALE = 0.042;  // scalar for star size
     
-    private double fx;
-    private double fy;
+    private double fx;      // x force
+    private double fy;      // y force
 
-    private boolean reinit = false;
-    private boolean removed = false;
+    private boolean reinit = false;     // reinitialized status
+    private boolean removed = false;    // removed status
 
 /**********************************************************************************
  *  Constructors        
@@ -89,8 +89,8 @@ public class Body {
     }
 
     // update size
-    public void newSize(double newSize) {
-        size = newSize;
+    public void newSize(double multiplier) {
+        size *= multiplier;
     }
 
     // blackhole eat process
@@ -110,14 +110,14 @@ public class Body {
         reinit = true;
     }
 
-/**********************************************************************************
- *  Accessors      
- **********************************************************************************/
-
     // draw this object using it's rx, ry, and image data
     public void draw() {
         StdDraw.picture(rx, ry, image, size, size);
     }
+
+/**********************************************************************************
+ *  Accessors      
+ **********************************************************************************/
 
     // update fx & fy with the additive gravitational force from the input Body obj
     public double calcRad(Body obj) {
