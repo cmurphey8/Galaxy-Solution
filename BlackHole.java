@@ -16,7 +16,6 @@ public class BlackHole extends Body {
     public BlackHole(Scanner scan, double R) {
         super(scan, R);
         newImage("blackhole.gif");
-        reinit();
     }
 
     // create and init a new object with an array of input parameters
@@ -24,8 +23,6 @@ public class BlackHole extends Body {
         super(arr, R);
         newImage("blackhole.gif");
         newSize(0.5);
-        reinit();
-        
     }
 
     // use body force update and then attempt to eat neighbors
