@@ -89,7 +89,7 @@ public class NBody {
                         }    
                     }
                     // reinitialize objects to match their images
-                    if (!object[i].isReinit()) {
+                    if (object[i] instanceof Star) {
                         if (object[i].getImage() == "blackhole.gif") { object[i] = new BlackHole(object[i].params(), R); }
                         if (object[i].getImage() == "neutron.gif") { object[i] = new Neutron(object[i].params(), R); }
                         if (object[i].getImage() == "pulsar.gif") { object[i] = new Pulsar(object[i].params(), R); }    
