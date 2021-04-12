@@ -17,7 +17,6 @@ public class Pulsar extends Body {
     public Pulsar(double[] arr, double R) {
         super(arr, R);
         newImage("pulsar.gif");
-        reinit();
 
         imageCount = 0;
         imageRev = false;
